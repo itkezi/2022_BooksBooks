@@ -51,12 +51,12 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value="/insert", method=RequestMethod.GET)
-	public String home() {
+	public String insert() {
 		return "/insert";
 	}
 
 	@RequestMapping(value="/insert", method=RequestMethod.POST)
-	public String home(Principal principal,BookVO bookVO) {
+	public String insert(Principal principal,BookVO bookVO) {
 		
 		bookVO.setB_username(principal.getName());
 		bookService.insert(bookVO);
@@ -97,8 +97,16 @@ public class HomeController {
 		
 		model.addAttribute("LAYOUT", "UPDATE");
 		
-		return "/update";
+		return "/insert";
 		
+	}
+	
+	@RequestMapping(value="/update/{seq}", method=RequestMethod.POST)
+	public String update(BookVO bookVO) {
+		
+		bookService.update(bookVO);
+		
+		return "redirect:/";
 	}
 	
 	@RequestMapping(value="/delete/{seq}", method=RequestMethod.GET)

@@ -17,6 +17,8 @@
 		<!-- <sec:intercept-url pattern="/user/join" access="permitAll"/> -->
 
 		<!-- isAnonymous() : 로그인 되지 않은 사용자만 -->
+		<sec:intercept-url pattern="/static/**" access="permitAll" />
+		
 		<sec:intercept-url pattern="/login" access="isAnonymous()" />
 		<sec:intercept-url pattern="/user/login" access="isAnonymous()" />
 		<sec:intercept-url pattern="/user/join" access="isAnonymous()" />

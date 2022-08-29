@@ -10,33 +10,29 @@
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Insert title here</title>
-
-<style>
-.book {
-border: 1px solid black;
-display: inline-block;
-width: 80%;
-height:100px;
-}
-</style>
-
+<title>HOME</title>
+<link rel="stylesheet" href="${rootPath}/static/css/main.css">
 </head>
 <body>
+<%@ include file="/WEB-INF/views/include/nav.jsp"%>
 	<H1>Hi~</H1>
-	<form:form class="logout" action="${rootPath}/logout">
-		<button>로그아웃</button>
-	</form:form>
-	
-	
+	<div class="books">
 	<c:forEach items="${BOOKS}" var="BB">
-		<a href="${rootPath}/detail/${BB.seq}" class="book" style='background-color: ${BB.b_color}'>
-			<c:if test="${BB.b_comp}">
-				<div>완독</div>
-			</c:if>
+		<a href="${rootPath}/detail/${BB.seq}" class="book" 
+			style="background-color: ${BB.b_color}; 
+			<c:if test="${BB.b_color=='transparent'}">background-image: url('${BB.b_image}')</c:if>">
+				<c:choose>
+					<c:when test="${BB.b_comp}">
+						<div class="comp comp_t"></div>
+					</c:when>
+					<c:otherwise>
+						<div class="comp comp_f"></div>			
+					</c:otherwise>
+				</c:choose>
 			${BB.b_title}
 		</a>
 	</c:forEach>
+	</div>
 	<a href="${rootPath}/insert">INSERT</a>
 </body>
 </html>

@@ -45,7 +45,7 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public UserVO findById(String id) {
-		return null;
+		return userDao.findById(id);
 	}
 
 	@Transactional

@@ -1,5 +1,8 @@
 package com.itkezi.booksbooks.controller;
 
+import java.security.Principal;
+import java.util.Random;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -37,9 +40,26 @@ public class UserController {
 	
 	@RequestMapping(value="/login",method=RequestMethod.GET)
 	public String login(String error, Model model) {
+		
+		Random random = new Random();
+		
+		int result = random.nextInt(5);
+		
+		model.addAttribute("RANDOM",result);
+		
 		model.addAttribute("LAYOUT","LOGIN");
 		model.addAttribute("error",error);
 		return "/user/login";
+	}
+	
+	@RequestMapping(value="/mypage", method=RequestMethod.GET)
+	public String mypage(Principal principal, Model model) {
+		
+		UserVO userVO = userService.findById(principal.getName());
+		
+		model.addAttribute("USER", userVO);
+		
+		return "/user/mypage";
 	}
 	
 
