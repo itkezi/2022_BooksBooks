@@ -11,32 +11,17 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Insert title here</title>
-
-<style>
-.book {
-border: 1px solid black;
-display: inline-block;
-width: 80%;
-height:100px;
-}
-</style>
-
 </head>
 <body>
-	<H1>Hi~</H1>
-	<form:form class="logout" action="${rootPath}/logout">
-		<button>로그아웃</button>
-	</form:form>
+	<div><h1>${BOOKS.b_title}</h1></div>
+	<div><h1>${BOOKS.b_author}</h1></div>
+	<div><h1>${BOOKS.b_publisher}</h1></div>
+	<div><h1>${BOOKS.b_description}</h1></div>
+	<div><h1>${BOOKS.b_comment}</h1></div>
+	<div><h1>${BOOKS.b_letter}</h1></div>
+	<div><h1>${BOOKS.b_page}</h1></div>
 	
-	
-	<c:forEach items="${BOOKS}" var="BB">
-		<a href="${rootPath}/detail/${BB.seq}" class="book" style='background-color: ${BB.b_color}'>
-			<c:if test="${BB.b_comp}">
-				<div>완독</div>
-			</c:if>
-			${BB.b_title}
-		</a>
-	</c:forEach>
-	<a href="${rootPath}/insert">INSERT</a>
+	<a href="${rootPath}/update/${BOOKS.seq}" >수정하기</a>
+	<a href="${rootPath}/delete/${BOOKS.seq}" >삭제하기</a>
 </body>
 </html>

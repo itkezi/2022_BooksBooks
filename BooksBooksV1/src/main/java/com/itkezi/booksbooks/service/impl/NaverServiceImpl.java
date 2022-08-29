@@ -21,10 +21,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.itkezi.booksbooks.config.NaverConfig;
 import com.itkezi.booksbooks.model.NaverBookVO;
 import com.itkezi.booksbooks.model.NaverParent;
 import com.itkezi.booksbooks.service.NaverService;
+import com.itkezi.letterbunker.config.NaverConfig;
 
 import lombok.extern.slf4j.Slf4j;
 

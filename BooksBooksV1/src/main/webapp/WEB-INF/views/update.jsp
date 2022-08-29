@@ -58,16 +58,16 @@ section {
 		    <option value="green">초록</option>
 		    <option value="yellow">노랑</option>
 		</select>
-		<h1>'${LAYOUT}'</h1>
+		
 		<input class="" name="b_image"  type="hidden" placeholder="이미지경로"  value="${BOOKS.b_image}">
-		<input class="" name="b_title" <c:if test="${LAYOUT == 'UPDATE'}"> readonly="readonly" </c:if> id="title" placeholder="책 제목" value="${BOOKS.b_title}">
+		<input class="" name="b_title" id="title" placeholder="책 제목" value="${BOOKS.b_title}">
 		<c:if test="${empty BOOKS.b_title}"><div>검색</div></c:if>
 		<input class="" name="b_author" placeholder="저자"  value="${BOOKS.b_author}"> 
-		<input class="" name="b_publisher"  placeholder="출판사"  value="${BOOKS.b_publisher}"> 
+		<input class="" name="b_publisher" placeholder="출판사"  value="${BOOKS.b_publisher}"> 
 		<input class="" name="b_description" placeholder="설명"  value="${BOOKS.b_description}">
 		<input class="" name="b_link" placeholder="판매링크"  value="${BOOKS.b_link}">
 		<input class="" name="b_comment" placeholder="후기"  value="${BOOKS.b_comment}"> 
-		<input class="" name="b_letter" placeholder="기억에 남는 구절"  value="${BOOKS.b_letter}"> 
+		<input class="" name="b_letter" placeholder="기억에 남는 구절"  value="${BOOKS.b_link}"> 
 		<input class="" name="b_price" placeholder="가격"  value="${BOOKS.b_price}"> 
 		<input class="" name="b_page" placeholder="읽은 페이지"  value="${BOOKS.b_page}">
 		<label><input class="" name ="b_comp" type="checkbox" value="true">다 읽음</label> 
