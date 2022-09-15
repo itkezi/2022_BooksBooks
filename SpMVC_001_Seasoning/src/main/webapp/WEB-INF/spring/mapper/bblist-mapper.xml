@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace : Dao 인터페이스와 연결하여 mybatis로 하여금 클래스를 작성하도록 하기 위한 설정 -->
+<mapper namespace="com.seasoningtour.app.persistence.BaseBallDao">
+	<select id="selectDusan" resultType="BaseBallScheduleVO">		
+		SELECT st_date, st_match
+		FROM tbl_schedule_dusan
+	</select>
+	
+	<select id="selectSt_Dusan" resultType="BaseBallScheduleVO">
+		SELECT * FROM tbl_bb_stadium
+    		WHERE st_pk ='bb_dusan'
+	</select>
+	
+	<select id="selectLg" resultType="BaseBallScheduleVO">		
+		SELECT st_date, st_match
+		FROM tbl_schedule_lg
+	</select>
+	
+	<select id="selectSt_Lg" resultType="BaseBallScheduleVO">
+		SELECT * FROM tbl_bb_stadium
+    		WHERE st_pk ='bb_lg'
+	</select>
+
+	<select id="selectKia" resultType="BaseBallScheduleVO">		
+		SELECT st_date, st_match
+		FROM tbl_schedule_kia
+	</select>
+	
+	<select id="selectSt_Kia" resultType="BaseBallScheduleVO">
+		SELECT * FROM tbl_bb_stadium
+    		WHERE st_pk ='bb_kia'
+	</select>
+	
+	<select id="selectSsg" resultType="BaseBallScheduleVO">		
+		SELECT st_date, st_match
+		FROM tbl_schedule_ssg
+	</select>
+	
+	<select id="selectSt_Ssg" resultType="BaseBallScheduleVO">
+		SELECT * FROM tbl_bb_stadium
+    		WHERE st_pk ='bb_ssg'
+	</select>
+	
+	<select id="selectKiwoom" resultType="BaseBallScheduleVO">		
+		SELECT st_date, st_match
+		FROM tbl_schedule_kiwoom
+	</select>
+	
+	<select id="selectSt_Kiwoom" resultType="BaseBallScheduleVO">
+		SELECT * FROM tbl_bb_stadium
+    		WHERE st_pk ='bb_kiwoom'
+	</select>
+	
+	<select id="selectKt" resultType="BaseBallScheduleVO">		
+		SELECT st_date, st_match
+		FROM tbl_schedule_kt
+	</select>
+	
+	<select id="selectSt_Kt" resultType="BaseBallScheduleVO">
+		SELECT * FROM tbl_bb_stadium
+    		WHERE st_pk ='bb_kt'
+	</select>
+	
+	<select id="selectHanwha" resultType="BaseBallScheduleVO">		
+		SELECT st_date, st_match
+		FROM tbl_schedule_hanwha
+	</select>
+	
+	<select id="selectSt_Hanwha" resultType="BaseBallScheduleVO">
+		SELECT * FROM tbl_bb_stadium
+    		WHERE st_pk ='bb_hanwha'
+	</select>
+	
+	<select id="selectSamsung" resultType="BaseBallScheduleVO">		
+		SELECT st_date, st_match
+		FROM tbl_schedule_samsung
+	</select>
+	
+	<select id="selectSt_Samsung" resultType="BaseBallScheduleVO">
+		SELECT * FROM tbl_bb_stadium
+    		WHERE st_pk ='bb_samsung'
+	</select>
+	
+	<select id="selectNc" resultType="BaseBallScheduleVO">		
+		SELECT st_date, st_match
+		FROM tbl_schedule_nc
+	</select>
+	
+	<select id="selectSt_Nc" resultType="BaseBallScheduleVO">
+		SELECT * FROM tbl_bb_stadium
+    		WHERE st_pk ='bb_nc'
+	</select>
+	
+	<select id="selectLotte" resultType="BaseBallScheduleVO">		
+		SELECT st_date, st_match
+		FROM tbl_schedule_lotte
+	</select>
+	
+	<select id="selectSt_Lotte" resultType="BaseBallScheduleVO">
+		SELECT * FROM tbl_bb_stadium
+    		WHERE st_pk ='bb_lotte'
+	</select>
+
+</mapper>

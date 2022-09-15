@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace : Dao 인터페이스와 연결하여 mybatis로 하여금 클래스를 작성하도록 하기 위한 설정 -->
+<mapper namespace="com.seasoningtour.app.persistence.FootBallDao">
+	<select id="selectSeoul" resultType="FootBallScheduleVO">
+		SELECT fb_st_date, fb_st_time, fb_st_match
+		FROM tbl_fb_schedule_seoul
+	</select>
+	
+	<select id="selectSt_Seoul" resultType="FootBallScheduleVO">
+		SELECT * FROM tbl_fb_stadium
+    		WHERE fb_st_pk ='fb_seoul'
+	</select>
+	
+	<select id="selectJeonbuk" resultType="FootBallScheduleVO">
+		SELECT fb_st_date, fb_st_time, fb_st_match
+		FROM tbl_fb_schedule_jeonbuk
+	</select>
+	
+	<select id="selectSt_Jeonbuk" resultType="FootBallScheduleVO">
+		SELECT * FROM tbl_fb_stadium
+    		WHERE fb_st_pk ='fb_jeonbuk'
+	</select>
+	
+	<select id="selectGangwon1" resultType="FootBallScheduleVO">
+		SELECT fb_st_date, fb_st_time, fb_st_match
+		FROM tbl_fb_schedule_gangwon1
+	</select>
+	
+	<select id="selectSt_Gangwon1" resultType="FootBallScheduleVO">
+		SELECT * FROM tbl_fb_stadium
+    		WHERE fb_st_pk ='fb_gangwon1'
+	</select>
+	
+	<select id="selectGangwon2" resultType="FootBallScheduleVO">
+		SELECT fb_st_date, fb_st_time, fb_st_match
+		FROM tbl_fb_schedule_gangwon1
+		WHERE fb_st_pk ='fb_gangwon2'
+	</select>
+	
+	<select id="selectSt_Gangwon2" resultType="FootBallScheduleVO">
+		SELECT * FROM tbl_fb_stadium
+    		WHERE fb_st_pk ='fb_gangwon2'
+	</select>
+	
+	<select id="selectIncheon" resultType="FootBallScheduleVO">
+		SELECT fb_st_date, fb_st_time, fb_st_match
+		FROM tbl_fb_schedule_incheon
+	</select>
+	
+	<select id="selectSt_Incheon" resultType="FootBallScheduleVO">
+		SELECT * FROM tbl_fb_stadium
+    		WHERE fb_st_pk ='fb_incheon'
+	</select>
+	
+	<select id="selectSeongnam" resultType="FootBallScheduleVO">
+		SELECT fb_st_date, fb_st_time, fb_st_match
+		FROM tbl_fb_schedule_seongnam
+	</select>
+	
+	<select id="selectSt_Seongnam" resultType="FootBallScheduleVO">
+		SELECT * FROM tbl_fb_stadium
+    		WHERE fb_st_pk ='fb_seongnam'
+	</select>
+	
+	<select id="selectSuwon_ss" resultType="FootBallScheduleVO">
+		SELECT fb_st_date, fb_st_time, fb_st_match
+		FROM tbl_fb_schedule_suwon_ss
+	</select>
+	
+	<select id="selectSt_Suwon_ss" resultType="FootBallScheduleVO">
+		SELECT * FROM tbl_fb_stadium
+    		WHERE fb_st_pk ='fb_suwon_ss'
+	</select>
+	
+	<select id="selectSuwon" resultType="FootBallScheduleVO">
+		SELECT fb_st_date, fb_st_time, fb_st_match
+		FROM tbl_fb_schedule_suwon
+	</select>
+	
+	<select id="selectSt_Suwon" resultType="FootBallScheduleVO">
+		SELECT * FROM tbl_fb_stadium
+    		WHERE fb_st_pk ='fb_suwon'
+	</select>
+	
+	<select id="selectGimcheon" resultType="FootBallScheduleVO">
+		SELECT fb_st_date, fb_st_time, fb_st_match
+		FROM tbl_fb_schedule_gimcheon
+	</select>
+	
+	<select id="selectSt_Gimcheon" resultType="FootBallScheduleVO">
+		SELECT * FROM tbl_fb_stadium
+    		WHERE fb_st_pk ='fb_gimcheon'
+	</select>
+	
+	<select id="selectDaegu" resultType="FootBallScheduleVO">
+		SELECT fb_st_date, fb_st_time, fb_st_match
+		FROM tbl_fb_schedule_daegu
+	</select>
+	
+	<select id="selectSt_Daegu" resultType="FootBallScheduleVO">
+		SELECT * FROM tbl_fb_stadium
+    		WHERE fb_st_pk ='fb_daegu'
+	</select>
+	
+	<select id="selectPohang" resultType="FootBallScheduleVO">
+		SELECT fb_st_date, fb_st_time, fb_st_match
+		FROM tbl_fb_schedule_pohang
+	</select>
+	
+	<select id="selectSt_Pohang" resultType="FootBallScheduleVO">
+		SELECT * FROM tbl_fb_stadium
+    		WHERE fb_st_pk ='fb_pohang'
+	</select>
+	
+	<select id="selectUlsan" resultType="FootBallScheduleVO">
+		SELECT fb_st_date, fb_st_time, fb_st_match
+		FROM tbl_fb_schedule_ulsan
+	</select>
+	
+	<select id="selectSt_Ulsan" resultType="FootBallScheduleVO">
+		SELECT * FROM tbl_fb_stadium
+    		WHERE fb_st_pk ='fb_ulsan'
+	</select>
+	
+	<select id="selectJeju" resultType="FootBallScheduleVO">
+		SELECT fb_st_date, fb_st_time, fb_st_match
+		FROM tbl_fb_schedule_jeju
+	</select>
+	
+	<select id="selectSt_Jeju" resultType="FootBallScheduleVO">
+		SELECT * FROM tbl_fb_stadium
+    		WHERE fb_st_pk ='fb_jeju'
+	</select>
+</mapper>

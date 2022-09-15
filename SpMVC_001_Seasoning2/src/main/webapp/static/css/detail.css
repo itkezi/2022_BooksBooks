@@ -1,0 +1,149 @@
+@charset "UTF-8";
+body {
+}
+
+section {
+  width: 100vw;
+}
+
+.hj-detail-titlebox {
+  width: 1000px;
+  padding: 10px 0;
+  margin: 20px auto;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  border-bottom: 2px red solid;
+}
+
+.hj-detail-titlebox a,
+.hj-detail-titlebox div {
+  width: 150px;
+}
+
+.hj-detail-titlebox h1 {
+  text-align: center;
+}
+
+.hj-detail-titlebox a {
+  cursor: pointer;
+}
+
+.hj-detail-main {
+  width: 1000px;
+  padding-bottom: 30px;
+  margin: 20px auto 30px;
+  text-align: center;
+  border-bottom: 1px solid red;
+}
+
+.hj-detail-main table {
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+  width: 88%;
+  margin: 20px auto;
+}
+
+.hj-detail-main table:last-of-type {
+	text-align: left;
+}
+
+.hj-detail-main table tr:nth-child(odd) {
+  background-color: #f2f2f2;
+  color: black;
+}
+/* .hj-detail-main table td:nth-child(odd) { */
+/*   background-color: #f2f2f2; */
+/* } */
+
+.hj-detail-main table th,
+.hj-detail-main table td {
+  /*   border: 1px solid #ddd; */
+  padding: 16px;
+}
+
+.hj-detail-main table th {
+	width: 200px;
+	
+}
+.hj-detail-mainpic {
+  width: 88%;
+}
+
+.hj-detail-other {
+  width: 1000px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-between;
+  /*    overflow: hidden; */
+}
+
+.hj-detail-other a:hover {
+  background-color: black;
+  color: #eee;
+}
+
+.hj-detail-otherbox {
+  text-align: center;
+  flex: 1;
+  margin: 0 10px;
+  height: 220px;
+  display: flex;
+  cursor: pointer;
+  position: relative;
+}
+
+.hj-detail-otherbox div {
+  width: 100%;
+}
+
+.hj-detail-otherbox:first-of-type {
+  display: none;
+}
+
+.hj-detail-otherbox img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  /*    width: 100%; */
+}
+
+.hj-detail-othercontent {
+  width: 210px;
+  padding: 10px;
+  top: 160px;
+  border-radius: 10px;
+  background-color: white;
+  position: absolute;
+  text-overflow: ellipsis;
+  transition: 0.5s ease-out;
+}
+
+.hj-detail-foreach:hover .hj-detail-othercontent {
+  top: 100px;
+  transition: 0.5s ease-out;
+}
+
+.hj-detail-foreach h3{
+	
+	margin-bottom: 10px;
+	
+}
+
+.hj-detail-detail {
+  margin: 10px auto;
+  padding: 10px;
+  background-color: rgb(0, 24, 65);
+  color: white;
+}
+.hj-other-addr, .hj-detail-othercontent h4 {
+	margin:5px 0;
+  width: 100%;
+  height: 22px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}

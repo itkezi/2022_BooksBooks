@@ -3,7 +3,7 @@
 	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
 	version="4.0">
-	
+		
 	<filter>
 		<filter-name>encKor</filter-name>
 		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -30,8 +30,8 @@
 		<filter-name>formFilter</filter-name>
 		<url-pattern>*</url-pattern>
 	</filter-mapping>
-	
-	<filter>
+	<!-- 대리자에 의해서 필터링을 하고 그 중간 역할을 하는 대상이 있을것이다 security context 의 값을 가지고 수행 -->
+ 	<filter>
 		<filter-name>springSecurityFilterChain</filter-name>
 		<filter-class> org.springframework.web.filter.DelegatingFilterProxy</filter-class>
 	</filter>

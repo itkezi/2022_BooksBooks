@@ -49,6 +49,13 @@ public class LunchServiceImplV1 implements LunchService{
 			encodeParams += "&" + URLEncoder.encode("SD_SCHUL_CODE","UTF-8");
 			encodeParams += "=7391127";
 			
+			encodeParams += "&" + URLEncoder.encode("MLSV_FROM_YMD","UTF-8");
+			encodeParams += "=202208";
+			
+			encodeParams += "&" + URLEncoder.encode("MLSV_TO_YMD","UTF-8");
+			encodeParams += "=202212";
+
+			
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

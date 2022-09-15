@@ -25,13 +25,14 @@ public class LunchController {
 		this.lunchService = lunchService;
 	}
 
-//	@RequestMapping(value = {"/",""}, method=RequestMethod.GET)
-//	public String home() {
-//		String queryString = lunchService.queryString(null);
-//		lunchService.getLunchRows(queryString);
-//		return "home";
-//	}
-//	
+/*	@RequestMapping(value = {"/",""}, method=RequestMethod.GET)
+	public String home() {
+		String queryString = lunchService.queryString(null);
+		lunchService.getLunchRows(queryString);
+		return "home";
+	}
+*/
+	/*
 	@ResponseBody
 	@RequestMapping(value = { "/", "" }, method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
 	public List<LunchRow> home() {
@@ -39,8 +40,9 @@ public class LunchController {
 		List<LunchRow> lunchs = lunchService.getLunchRows(queryString);
 		return lunchs;
 	}
+	*/
 
-	@RequestMapping(value = "/get", method = RequestMethod.GET)
+	@RequestMapping(value = {"/",""}, method = RequestMethod.GET)
 	public String list(Model model) {
 
 		String queryString = lunchService.queryString(null);
@@ -50,6 +52,7 @@ public class LunchController {
 
 		return "home";
 	}
+	
 
 	@RequestMapping(value = "/{MLSV_YMD}/menu", method = RequestMethod.GET)
 	public String detail(@PathVariable("MLSV_YMD") String MLSV_YMD, Model model) {
@@ -69,6 +72,12 @@ public class LunchController {
 		model.addAttribute("LUNCH", vo);
 
 		return "/menu";
+	}
+	
+	@RequestMapping(value = "/{MLSV_YMD}/menu", method = RequestMethod.POST)
+	public String star(@PathVariable("MLSV_YMD") String MLSV_YMD, String value) {
+		log.debug("전달받은 값 : ",value);
+		return "redirect:/";
 	}
 
 }

@@ -8,12 +8,7 @@
 	<name>SpMVC_001_SomeLunch</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
-	<properties>
-
-	</properties>
-
-	<!-- Spring framework의 version 관리 -->
-	<dependencyManagement>
+		<dependencyManagement>
 		<dependencies>
 			<!-- https://mvnrepository.com/artifact/org.springframework/spring-framework-bom -->
 			<dependency>
@@ -32,32 +27,47 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-
+	<properties>
+		<java-version>11</java-version>
+		<org.springframework-version>5.2.21.RELEASE</org.springframework-version>
+		<org.aspectj-version>1.6.10</org.aspectj-version>
+		<org.slf4j-version>1.7.36</org.slf4j-version>
+		<jackson-version>2.13.3</jackson-version>
+	</properties>
 	<dependencies>
-		<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+		<!-- Spring -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<exclusions>
+				<!-- Exclude Commons Logging in favor of SLF4j -->
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-core -->
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-core</artifactId>
-		</dependency>
 
+		<!-- spring security web -->
 		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-web -->
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-web</artifactId>
 		</dependency>
 
+		<!-- spring security config -->
 		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-config -->
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-config</artifactId>
 		</dependency>
 
+		<!-- spring security taglibs -->
 		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-taglibs -->
 		<dependency>
 			<groupId>org.springframework.security</groupId>
@@ -71,7 +81,14 @@
 			<artifactId>spring-jdbc</artifactId>
 		</dependency>
 
-		<!-- commons-dbcp2 -->
+
+		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-core -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+		</dependency>
+
+		<!-- common-dbcp2 -->
 		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2 -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
@@ -79,6 +96,13 @@
 			<version>2.9.0</version>
 		</dependency>
 
+		<!-- mysql connector -->
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.29</version>
+		</dependency>
 		<!-- mybatis -->
 		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
 		<dependency>
@@ -87,44 +111,23 @@
 			<version>3.5.10</version>
 		</dependency>
 
-		<!-- bybatis-spring -->
+		<!-- https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc8 -->
+		<dependency>
+			<groupId>com.oracle.database.jdbc</groupId>
+			<artifactId>ojdbc8</artifactId>
+			<version>21.5.0.0</version>
+		</dependency>
+
+
+
+		<!-- mybatis-spring -->
 		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis-spring</artifactId>
 			<version>2.0.7</version>
 		</dependency>
-
-		<!-- mysql-connnector/j -->
-		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.30</version>
-		</dependency>
-
-		<!-- jackson-bind -->
-		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
-			<version>2.13.3</version>
-		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>1.7.36</version>
-		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-classic</artifactId>
-			<version>1.2.11</version>
-		</dependency>
-
+		<!-- lombok -->
 		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -132,51 +135,103 @@
 			<version>1.18.24</version>
 			<scope>provided</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+		<!-- json data 사용시 필수 -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson-version}</version>
+		</dependency>
 
-		<!-- JSP File 핸들링 위한 도구 -->
-		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-xml</artifactId>
+			<version>${jackson-version}</version>
+		</dependency>
+
+		<!-- AspectJ -->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>${org.aspectj-version}</version>
+		</dependency>
+
+		<!-- Logging -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${org.slf4j-version}</version>
+			<!-- <scope>runtime</scope> -->
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.2.11</version>
+		</dependency>
+
+		<!-- Servlet -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<version>4.0.1</version>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
 			<scope>provided</scope>
 		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/javax.servlet.jsp/javax.servlet.jsp-api -->
 		<dependency>
 			<groupId>javax.servlet.jsp</groupId>
-			<artifactId>javax.servlet.jsp-api</artifactId>
-			<version>2.3.3</version>
+			<artifactId>jsp-api</artifactId>
+			<version>2.1</version>
 			<scope>provided</scope>
 		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
 
+		<!-- Test -->
 		<dependency>
-			<groupId>com.fasterxml.jackson.dataformat</groupId>
-			<artifactId>jackson-dataformat-xml</artifactId>
-			<version>2.13.3</version>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.7</version>
+			<scope>test</scope>
 		</dependency>
-
 	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.1</version>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.9</version>
 				<configuration>
-					<release>11</release>
+					<additionalProjectnatures>
+						<projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
+					</additionalProjectnatures>
+					<additionalBuildcommands>
+						<buildcommand>org.springframework.ide.eclipse.core.springbuilder</buildcommand>
+					</additionalBuildcommands>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>true</downloadJavadocs>
 				</configuration>
 			</plugin>
 			<plugin>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>3.2.3</version>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+				<configuration>
+					<source>${java-version}</source>
+					<target>${java-version}</target>
+					<compilerArgument>-Xlint:all</compilerArgument>
+					<showWarnings>true</showWarnings>
+					<showDeprecation>true</showDeprecation>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.2.1</version>
+				<configuration>
+					<mainClass>org.test.int1.Main</mainClass>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
